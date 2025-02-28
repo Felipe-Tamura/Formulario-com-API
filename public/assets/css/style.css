@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sigmar&family=Ubuntu&display=swap');
+:root{
+    --cor1: #E5E5E5;
+    --cor2: #1D7874;
+    --cor3: #26081C;
+    --cor4: #150811;
+    --transparente: #00000000;
+    --opaco: #000000d4;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cor1);
+
+    font-family: "Ubuntu", serif;
+}
+
+main{
+    margin: 10vh;
+}
+
+h1{
+    margin-bottom: 15px;
+    color: var(--cor4);
+    text-align: center;
+
+    font-family: "Open sans", serif;
+    font-size: 45px;
+}
+
+#formMensagem{
+    display: flex;
+    flex-direction: column;
+    
+    width: 25vw;
+    height: 60vh;
+    margin: auto;
+    padding: 10px;
+
+    background-color: var(--cor4);
+    border-radius: 28px;
+
+    & label{
+        color: var(--cor1);
+        margin: 10px;
+
+        font-size: 30px;
+    }
+
+    & input{
+        margin: 2px 15px;
+        padding: 5px;
+
+        color: var(--cor4);
+
+        font-size: 25px;
+    }
+
+    & textarea{
+        margin: 2px 15px;
+        padding: 5px;
+
+        height: 100%;
+
+        color: var(--cor4);
+
+        font-size: 25px;
+    }
+
+    & button{
+        margin: 15px 150px;
+        padding: 5px;
+
+        background-color: var(--cor2);
+        color: var(--cor1);
+
+        border: none;
+        border-radius: 10px;
+
+        font-family: "Open Sans", serif;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    & button:hover{
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+    & button:active{
+        filter: brightness(0.8);
+    }
+}
