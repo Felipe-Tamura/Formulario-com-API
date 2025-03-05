@@ -1,3 +1,4 @@
+const URL_DA_API = ''
 const $ = (element) => document.querySelector(element);
 
 $("#formMensagem").addEventListener("submit", async (e) =>{
@@ -8,7 +9,7 @@ $("#formMensagem").addEventListener("submit", async (e) =>{
 
     try{
         // Enviando solicitação para API
-        const response = await fetch('URL_DA_API', { method: 'POST', body: formData});
+        const response = await fetch(URL_DA_API, { method: 'POST', body: formData});
         // Obtendo resposta da API
         const data = await response.json();
 
