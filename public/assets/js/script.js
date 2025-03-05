@@ -1,4 +1,3 @@
-const URL_DA_API = ''
 const $ = (element) => document.querySelector(element);
 
 $("#formMensagem").addEventListener("submit", async (e) =>{
