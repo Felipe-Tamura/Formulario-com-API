@@ -7,9 +7,12 @@ $("#formMensagem").addEventListener("submit", async (e) =>{
     const formData = new FormData(e.target);
 
     try{
+        // Enviando solicitação para API
         const response = await fetch('SUA_URL_DA_API_AQUI', { method: 'POST', body: formData});
+        // Obtendo resposta da API
         const data = await response.json();
 
+        // Verificação da resposta
         if(data.success){
             alert("Mensagem enviada!");
         }else{
