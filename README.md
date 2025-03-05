@@ -10,6 +10,8 @@ Um projeto simples para integrar um formulário HTML com uma API do Google Sheet
 
 ### Conteúdo
 
-- [Por que usar o google sheets?](#por-que-usar-o-google-sheets)
+- [Como usar o google sheets como API?](#como-usar-o-google-sheets-como-api)
 
-## Por que usar o google sheets?
+## Como usar o google sheets como API?
+
+O código original que usei no script do google sheets foi do [Jamie Wilson](https://github.com/jamiewilson/form-to-google-sheets), fiz algumas alterações pesquisando e implementando verificações para não ocorrer erro no envio do conteúdo do formulário para a API.

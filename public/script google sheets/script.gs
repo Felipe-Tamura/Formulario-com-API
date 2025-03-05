@@ -15,7 +15,8 @@ function setupInicial(){
 
   
   if(!propScript.getProperty('key')){
-    const planilhaAtiva = SpreadsheetApp.getActiveSpreadsheet(); // Defininido a planilha ativa
+    // Definindo a planilha ativa
+    const planilhaAtiva = SpreadsheetApp.getActiveSpreadsheet();
     propScript.setProperty('key', planilhaAtiva.getId());
   }
 }
@@ -43,7 +44,7 @@ function doPost(e){
 
     // Verificando campos obrigatórios
     const campoFaltante = CONFIG.CAMPOS_OBRIGATORIOS.filter(
-      campo => !e.parametro[campo]?.trim() // ?.trim() Segurança contra undefined. Em vez de gerar erro irá gerar 'undefined'
+      campo => !e.parameter[campo]?.trim() // ?.trim() Segurança contra undefined. Em vez de gerar erro irá gerar 'undefined'
     );
     if(campoFaltante.length > 0){
       throw new Error(`Campos obrigatórios faltantes: ${campoFaltante.join(', ')}`);
@@ -52,10 +53,21 @@ function doPost(e){
     // Construção dos dados
     // Mapeando cabeçalho para receber seu valor
     const novosDados = cabecalho.map(header => {
-      return header === CONFIG.COLUNA_DATA ? new Date() : e.parametro[header]?.trim() || '';
+      return header === CONFIG.COLUNA_DATA ? new Date() : e.parameter[header]?.trim() || '';
     })
 
-    Logger.log(novosDados)
+    // Inserindo dados na planilha
+    sheet.getRange(proxLinha, 1, 1, novosDados.length)
+      .setValues([novosDados])
+      // Forçando formato de texto para evitar formatação automática
+      .setNumberFormats([novosDados.map(() => '@')]);
+
+    // Retornando resposta
+    return buildResponse({
+      success: true,
+      row: proxLinha,
+      timeStamp: new Date().toISOString()
+    })
 
   }catch (error){
     // Log interno
@@ -81,11 +93,11 @@ function buildResponse(data){
 
 function teste(){
   const ex = {
-    parametro: {
+    parameter: {
       'Nome': 'Felipe',
       'Email': 'felipe@gmail.com',
       'Telefone': '11987654321',
-      'Mensagem': 'Olá, Me chamo Felipe Tamura e gostaria de entrar em contato sobre a vaga de dev Junior',
+      'Mensagem': 'Olá, Me chamo Felipe Tamura',
     }
   }
   
