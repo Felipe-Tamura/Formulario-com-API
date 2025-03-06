@@ -7,21 +7,46 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <!--
+        SEÇÃO PRINCIPAL DO FORMULÁRIO
+        Campos de entrada para coleta de dados do usuário
+    -->
     <main>
         <h1>Entre em contato</h1>
+
+        <!--
+            FORMULÁRIO PRINCIPAL
+            Utiliza ID para vinculação do JavaScript
+            Atributo name dos campos deve corresponder aos cabeçalhos da planilha
+        -->
         <form id="formMensagem">
+
+            <!-- Campo Nome -->
             <label for="nameForm">Nome</label>
             <input type="text" name="Nome" id="nameForm">
+
+            <!-- Campo Email-->
             <label for="emailForm">Email</label>
             <input type="text" name="Email" id="emailForm">
+
+            <!-- Campo Telefone -->
             <label for="phoneForm">Telefone</label>
             <input type="number" name="Telefone" id="phoneForm">
+
+            <!-- Campo Mensagem -->
             <label for="messageForm">Mensagem</label>
             <textarea name="Mensagem" id="messageForm"></textarea>
+
+            <!-- Botão de enviar -->
             <button type="submit">Enviar</button>
         </form>
     </main>
-    <script src="./assets/js/script.js"></script>
+    <!-- 
+        ARQUIVOS JS
+        1. config.js - Contém variáveis de ambiente não comitadas no GIT.
+        2. script.js - Contém a lógica principal.
+    -->
     <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/script.js"></script> 
 </body>
 </html>
