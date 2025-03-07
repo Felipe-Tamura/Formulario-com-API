@@ -11,6 +11,9 @@ Um projeto simples para integrar um formulário HTML com uma API do Google Sheet
 ## Conteúdo
 
 - [Código do projeto](#código-do-projeto)
+- [Formulário pronto](#formulário-pronto)
+- [Planilha preenchida](#planilha-preenchida)
+- [Exemplo de envio](#exemplo-de-envio)
 - [Como usar o google sheets como API?](#como-usar-o-google-sheets-como-api)
 - [Instalação](#instalação)
 - [Contato](#contato)
@@ -34,6 +37,15 @@ O `scriptt.js` é responsável por:
 - Coletar dados do formulário
 - Enviar para a API do Google Sheets
 - Exibir mensagens de sucesso/erro
+
+## Formulário pronto
+![Formulário](./public/docs/images/Formulario.png)
+
+## Planilha preenchida
+![Planilha preenchida](./public/docs/images/Planilha.png)
+
+## Exemplo de envio
+![Exemplo de envio](./public/docs/GIF/Exemplo%20de%20envio.gif)
 
 ## Como usar o google sheets como API?
 
